@@ -2,29 +2,29 @@ package ar.edu.unlam.cuenta;
 
 public class CuentaSueldo {
 	
-	private Integer saldo;
+	private Double saldo;
 	
 	public CuentaSueldo() {
-		this.saldo = 0;
+		this.saldo = 0.0;
 	}
 
-	public Integer getSaldo() {
+	public Double getSaldo() {
 		return this.saldo;
 	}
 
-	public void depositar(Integer valorADepositar) {
-		if(valorADepositar == null || valorADepositar < 0) {
+	public void depositar(Double monto) {
+		if(monto == null || monto < 0) {
 			return;
 		}
-		this.saldo += valorADepositar;
+		this.saldo += monto;
 		
 	}
 
-	public void extraer(Integer valorAExtraer) {
-		if(valorAExtraer == null || valorAExtraer > this.saldo || valorAExtraer < 0) {
+	public void extraer(Double monto) {
+		if(monto == null || monto > this.saldo || monto < 0) {
 			return;
 		}
-		this.saldo -= valorAExtraer;
+		this.saldo -= monto;
 		
 	}
 

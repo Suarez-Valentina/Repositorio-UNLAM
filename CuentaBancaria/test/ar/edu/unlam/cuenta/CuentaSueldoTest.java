@@ -20,9 +20,9 @@ public class CuentaSueldoTest {
 	public void queAlCrearseLaCuentaSuSaldoInicialSea0() {
 		//Preparación
 		CuentaSueldo cuenta = new CuentaSueldo();
-		Integer saldoEsperado = 0;
+		Double saldoEsperado = 0.0;
 		//Ejecución
-		Integer saldoObtenido = cuenta.getSaldo();
+		Double saldoObtenido = cuenta.getSaldo();
 		//Verificación
 		assertEquals(saldoEsperado,saldoObtenido);
 	}
@@ -32,10 +32,10 @@ public class CuentaSueldoTest {
 	public void queSePuedaDepositarDineroYMiSaldoAumente() {
 		//Preparación
 		CuentaSueldo cuenta = new CuentaSueldo();
-		Integer saldoEsperado = 100;
+		Double saldoEsperado = 100.0;
 		//Ejecución
-		cuenta.depositar(100);
-		Integer saldoObtenido = cuenta.getSaldo();
+		cuenta.depositar(100.0);
+		Double saldoObtenido = cuenta.getSaldo();
 		//Verificación
 		assertEquals(saldoEsperado,saldoObtenido);
 	}
@@ -45,11 +45,11 @@ public class CuentaSueldoTest {
 	public void queSePuedaExtraerConDineroEnCuentaYMiSaldoDecremente() {
 		//Preparación
 		CuentaSueldo cuenta = new CuentaSueldo();
-		Integer saldoEsperado = 20;
+		Double saldoEsperado = 20.0;
 		//Ejecución
-		cuenta.depositar(100);
-		cuenta.extraer(80);
-		Integer saldoObtenido = cuenta.getSaldo();
+		cuenta.depositar(100.0);
+		cuenta.extraer(80.0);
+		Double saldoObtenido = cuenta.getSaldo();
 		//Verificación
 		assertEquals(saldoEsperado,saldoObtenido);
 	}
@@ -59,11 +59,11 @@ public class CuentaSueldoTest {
 	public void queSeNoSePuedaExtraerSinDineroSuficienteEnCuenta() {
 		//Preparación
 		CuentaSueldo cuenta = new CuentaSueldo();
-		Integer saldoEsperado = 100;
+		Double saldoEsperado = 100.0;
 		//Ejecución
-		cuenta.depositar(100);
-		cuenta.extraer(120);
-		Integer saldoObtenido = cuenta.getSaldo();
+		cuenta.depositar(100.0);
+		cuenta.extraer(120.0);
+		Double saldoObtenido = cuenta.getSaldo();
 		//Verificación
 		assertEquals(saldoEsperado,saldoObtenido);
 	}
@@ -73,10 +73,10 @@ public class CuentaSueldoTest {
 	public void queSeNoSePuedaDepositarDineroNegativo() {
 		//Preparación
 		CuentaSueldo cuenta = new CuentaSueldo();
-		Integer saldoEsperado = 0;
+		Double saldoEsperado = 0.0;
 		//Ejecución
-		cuenta.depositar(-10);
-		Integer saldoObtenido = cuenta.getSaldo();
+		cuenta.depositar(-10.0);
+		Double saldoObtenido = cuenta.getSaldo();
 		//Verificación
 		assertEquals(saldoEsperado,saldoObtenido);
 	}
@@ -86,11 +86,11 @@ public class CuentaSueldoTest {
 	public void queSeNoSePuedaExtraerDineroNegativo() {
 		//Preparación
 		CuentaSueldo cuenta = new CuentaSueldo();
-		Integer saldoEsperado = 100;
+		Double saldoEsperado = 100.0;
 		//Ejecución
-		cuenta.depositar(100);
-		cuenta.extraer(-40);
-		Integer saldoObtenido = cuenta.getSaldo();
+		cuenta.depositar(100.0);
+		cuenta.extraer(-40.0);
+		Double saldoObtenido = cuenta.getSaldo();
 		//Verificación
 		assertEquals(saldoEsperado,saldoObtenido);
 	}
