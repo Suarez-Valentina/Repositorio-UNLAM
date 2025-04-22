@@ -3,6 +3,7 @@ package ar.edu.unlam.dominio;
 public class Carta {
 	
 	private Integer salud;
+	private Integer numero;
 
 	public Carta() {
 		this.salud = 100;
@@ -21,5 +22,9 @@ public class Carta {
 			this.salud = 0;
 		}
 			}
+
+	public void setNumero(Integer numero) {
+		this.numero = numero;
+	}
 
 }

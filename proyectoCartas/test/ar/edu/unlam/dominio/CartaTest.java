@@ -53,7 +53,11 @@ public class CartaTest {
 		assertEquals(saludEsperada,saludObtenida);			
 	}
 	
-	
+	@Test
+	public void queAlExistirDosCartasIgualesSePuedaComprobarQueLoSon() {
+		Carta carta = new Carta();
+		carta.setNumero(1);
+	}
 	
 	
 	
