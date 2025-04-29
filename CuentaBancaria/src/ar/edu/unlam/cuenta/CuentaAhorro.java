@@ -1,20 +1,13 @@
 package ar.edu.unlam.cuenta;
 
-public class CuentaAhorro {
-	private Double saldo;
+public class CuentaAhorro extends CuentaBancaria{
+
 	private Integer contador;
 	private final Byte COMISION = 6;
 
 	public CuentaAhorro() {
 		this.saldo = 0.0;
 		this.contador = 0;
-	}
-	
-	public void depositar(Double monto) {
-		if(monto == null || monto < 0) {
-			return;
-		}
-		this.saldo += monto;
 	}
 
 	public void extraer(Double monto) {
@@ -33,10 +26,6 @@ public class CuentaAhorro {
 		
 		this.saldo -= monto;
 		contador++;
-	}
-
-	public Double getSaldo() {
-		return this.saldo;
 	}
 
 }

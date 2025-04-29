@@ -25,7 +25,7 @@ public class CartaTest {
 	@Test
 	public void queAlCrearseLaCartaExista() {
 		//Preparación y ejecución
-		Carta carta = new Carta();
+		Carta carta = new Carta(1);
 		//Verificación
 		assertNotNull(carta);
 	}
@@ -34,7 +34,7 @@ public class CartaTest {
 	public void queAlCrearseUnaCartaSuSaludInicialEs100() {
 		//Preparación 
 		Integer saludEsperada =100;
-		Carta carta = new Carta();
+		Carta carta = new Carta(1);
 		//Ejecución
 		Integer saludObtenida = carta.getSalud();				
 		//Verificación
@@ -45,7 +45,7 @@ public class CartaTest {
 	public void queAlExistirUnaCartaCon100DeSaludYReciboDanioDe20MiSaludSea80() {
 		//Preparación 
 		Integer saludEsperada = 0;
-		Carta carta = new Carta();
+		Carta carta = new Carta(1);
 		//Ejecución
 		carta.recibeDanio(100);
 		Integer saludObtenida = carta.getSalud();
@@ -55,18 +55,23 @@ public class CartaTest {
 	
 	@Test
 	public void queAlExistirDosCartasIgualesSePuedaComprobarQueLoSon() {
-		Carta carta = new Carta();
-		carta.setNumero(1);
+		
+		Carta carta1 = new Carta(1);
+		Carta carta2 = new Carta(1);
+		
+		Boolean sonIguales = carta1.equals(carta2);
+		
+		assertTrue(sonIguales);
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	@Test
+	public void queAlExistirDosCartasIgualesSePuedaComprobarQueTienenElmismoHashCode() {
+		
+		Carta carta1 = new Carta(1);
+		Carta carta2 = new Carta(1);
+		
+		assertEquals(carta1.hashCode(), carta2.hashCode());
+	}
+
 
 }

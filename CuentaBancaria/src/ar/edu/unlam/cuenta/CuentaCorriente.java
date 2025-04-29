@@ -1,8 +1,7 @@
 package ar.edu.unlam.cuenta;
 
-public class CuentaCorriente {
+public class CuentaCorriente extends CuentaBancaria{
 
-	private Double saldo;
 	private final Double PORCENTAJE_DE_COMISION = 0.05;
 	private final Double LIMITE_DESCUBIERTO = -600.0;
 
@@ -10,14 +9,6 @@ public class CuentaCorriente {
 		this.saldo = 0.0;
 	}
 	
-	public void depositar(Double monto) {
-		if(monto == null || monto < 0) {
-			return;
-		}
-		this.saldo += monto;
-		
-	}
-
 	public void extraer(Double monto) {
 		if(monto == null || monto < 0) {
 			return;
@@ -39,10 +30,6 @@ public class CuentaCorriente {
 		
 		this.saldo -= montoTotal;
 		
-	}
-
-	public Double getSaldo() {
-		return this.saldo;
 	}
 
 }
