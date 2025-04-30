@@ -21,6 +21,7 @@ public class Auto extends Transporte{
 		this.sumaVolumenDeLosPaquetes = 0.0;
 	}
 	
+	@Override
 	public Boolean agregarPaquete(Paquete paquete) {
 		Double volumenDelPaquete = paquete.getVolumen();
 		String destinoDelPaquete = paquete.getDestino();

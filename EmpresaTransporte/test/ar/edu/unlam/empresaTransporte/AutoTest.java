@@ -29,7 +29,7 @@ public class AutoTest {
 		
 		paquete.calcularVolumen();
 
-		assertTrue(auto.agregarPaquete(paquete));
+		assertTrue(this.auto.agregarPaquete(paquete));
 		
 	}
 	
@@ -61,9 +61,9 @@ public class AutoTest {
 		paquete2.calcularVolumen();
 		paquete3.calcularVolumen();
 		
-		assertTrue(auto.agregarPaquete(paquete1));
-		assertTrue(auto.agregarPaquete(paquete2));
-		assertTrue(auto.agregarPaquete(paquete3));
+		assertTrue(this.auto.agregarPaquete(paquete1));
+		assertTrue(this.auto.agregarPaquete(paquete2));
+		assertTrue(this.auto.agregarPaquete(paquete3));
 		
 	}
 	
@@ -103,10 +103,10 @@ public class AutoTest {
 		paquete3.calcularVolumen();
 		paquete4.calcularVolumen();
 		
-		assertTrue(auto.agregarPaquete(paquete1));
-		assertTrue(auto.agregarPaquete(paquete2));
-		assertTrue(auto.agregarPaquete(paquete3));
-		assertFalse(auto.agregarPaquete(paquete4));
+		assertTrue(this.auto.agregarPaquete(paquete1));
+		assertTrue(this.auto.agregarPaquete(paquete2));
+		assertTrue(this.auto.agregarPaquete(paquete3));
+		assertFalse(this.auto.agregarPaquete(paquete4));
 		
 	}
 	
@@ -131,8 +131,8 @@ public class AutoTest {
 		paquete.calcularVolumen();
 		paquete2.calcularVolumen();
 		
-		assertTrue(auto.agregarPaquete(paquete));
-		assertFalse(auto.agregarPaquete(paquete2));
+		assertTrue(this.auto.agregarPaquete(paquete));
+		assertFalse(this.auto.agregarPaquete(paquete2));
 		
 	}
 

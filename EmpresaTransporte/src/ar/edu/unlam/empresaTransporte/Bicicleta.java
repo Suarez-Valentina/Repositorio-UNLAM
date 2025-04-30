@@ -2,6 +2,7 @@ package ar.edu.unlam.empresaTransporte;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 public class Bicicleta extends Transporte{
 	
@@ -9,9 +10,8 @@ public class Bicicleta extends Transporte{
 	/* Puede enviar dos paquetes de hasta 0.125 m3 y un máximo de 15 kg.
 		NOTA: Si no tengo destino, el primer paquete me define el destino hacia
 			dónde va la bicicleta.*/
-
 	private final Integer CANTIDAD_MAXIMA_DE_PAQUETES = 2;
-	private ArrayList<String> ciudades;
+	private List<String> ciudades;
 
 	
 	public Bicicleta() {
@@ -23,6 +23,7 @@ public class Bicicleta extends Transporte{
 		this.sumaVolumenDeLosPaquetes = 0.0;
 	}
 
+	@Override
 	public Boolean agregarPaquete(Paquete paquete) {
 		Double volumenDelPaquete = paquete.getVolumen();
 		String destinoDelPaquete = paquete.getDestino();

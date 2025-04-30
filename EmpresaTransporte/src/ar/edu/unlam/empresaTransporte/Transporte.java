@@ -1,11 +1,11 @@
 package ar.edu.unlam.empresaTransporte;
 
-import java.util.LinkedList;
+import java.util.List;
 
 public abstract class Transporte {
 	protected Double volumenMaximo;
 	protected Double pesoMaximoPermitido;
-	protected LinkedList<Paquete> paquetes;
+	protected List<Paquete> paquetes;
 	protected Double sumaPesoDeLosPaquetes;
 	protected Double sumaVolumenDeLosPaquetes;
 	

@@ -2,6 +2,7 @@ package ar.edu.unlam.empresaTransporte;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class BicicletaTest {
@@ -10,11 +11,16 @@ public class BicicletaTest {
 	/* Puede enviar dos paquetes de hasta 0.125 m3 y un máximo de 15 kg.
 		NOTA: Si no tengo destino, el primer paquete me define el destino hacia
 				dónde va la bicicleta.*/
+	
+	private Bicicleta bicicleta;
+	
+	@Before
+	public void bicicleta() {
+		this.bicicleta = new Bicicleta();
+	}
 
 	@Test
 	public void queAlAgregarUnPaqueteDeMenosDe0125m3yPeseMenosDe15kgLaBicicletaLoPuedaLlevar(){
-		
-		Bicicleta bicicleta = new Bicicleta();
 
 		Double ancho = 0.3;
 		Double alto = 0.5;
@@ -25,15 +31,13 @@ public class BicicletaTest {
 		
 		paquete.calcularVolumen();
 
-		assertTrue(bicicleta.agregarPaquete(paquete));
+		assertTrue(this.bicicleta.agregarPaquete(paquete));
 		
 	}
 	
 	@Test
 	public void queSePuedanAgregarDosPaquetesYLaSumaDePesoSeaMenorOIgualA15kgYSuVolumenMenorOIgualA0125m3(){
 
-		Bicicleta bicicleta = new Bicicleta();
-		
 		Double ancho1 = 0.3;
 		Double alto1 = 0.5;
 		Double profundidad1 = 0.4;
@@ -51,15 +55,13 @@ public class BicicletaTest {
 		paquete1.calcularVolumen();
 		paquete2.calcularVolumen();
 
-		assertTrue(bicicleta.agregarPaquete(paquete1));
-		assertTrue(bicicleta.agregarPaquete(paquete2));
+		assertTrue(this.bicicleta.agregarPaquete(paquete1));
+		assertTrue(this.bicicleta.agregarPaquete(paquete2));
 		
 	}
 
 	@Test
 	public void queNoSePuedanAgregarMasDeDosPaquetesALaBicicleta(){
-
-		Bicicleta bicicleta = new Bicicleta();
 		
 		Double ancho1 = 0.3;
 		Double alto1 = 0.5;
@@ -86,16 +88,14 @@ public class BicicletaTest {
 		paquete2.calcularVolumen();
 		paquete3.calcularVolumen();
 
-		assertTrue(bicicleta.agregarPaquete(paquete1));
-		assertTrue(bicicleta.agregarPaquete(paquete2));
-		assertFalse(bicicleta.agregarPaquete(paquete3));
+		assertTrue(this.bicicleta.agregarPaquete(paquete1));
+		assertTrue(this.bicicleta.agregarPaquete(paquete2));
+		assertFalse(this.bicicleta.agregarPaquete(paquete3));
 		
 	}
 	
 	@Test
 	public void queElSegundoPaqueteNoSePuedaLlevarSiTieneUnDestinoDistintoAlPrimero(){
-
-		Bicicleta bicicleta = new Bicicleta();
 		
 		Double ancho1 = 0.3;
 		Double alto1 = 0.5;
@@ -115,8 +115,8 @@ public class BicicletaTest {
 		paquete1.calcularVolumen();
 		paquete2.calcularVolumen();
 
-		assertTrue(bicicleta.agregarPaquete(paquete1));
-		assertFalse(bicicleta.agregarPaquete(paquete2));
+		assertTrue(this.bicicleta.agregarPaquete(paquete1));
+		assertFalse(this.bicicleta.agregarPaquete(paquete2));
 		
 	}
 	

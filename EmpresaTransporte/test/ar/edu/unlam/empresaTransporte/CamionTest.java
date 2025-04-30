@@ -2,6 +2,7 @@ package ar.edu.unlam.empresaTransporte;
 
 import static org.junit.Assert.*;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class CamionTest {
@@ -9,10 +10,15 @@ public class CamionTest {
 	//Abarca todas las cuidades necesarias.
 	//Puede llevar hasta 20 m3 de carga y máximo de 16 toneladas.
 	
+	private Camion camion;
+	
+	@Before
+	public void camion() {
+		this.camion = new Camion();	
+		}
+	
 	@Test
 	public void queAlAgregarUnPaqueteDeMenosDe20m3yPeseMenosDe16000kgLoPuedaLlevar(){
-		
-		Camion camion = new Camion();
 
 		Double ancho = 1.3;
 		Double alto = 2.9;
@@ -23,7 +29,7 @@ public class CamionTest {
 		
 		paquete.calcularVolumen();
 
-		assertTrue(camion.agregarPaquete(paquete));
+		assertTrue(this.camion.agregarPaquete(paquete));
 		
 	}
 	
@@ -65,10 +71,10 @@ public class CamionTest {
 		paquete3.calcularVolumen();
 		paquete4.calcularVolumen();
 		
-		assertTrue(camion.agregarPaquete(paquete1));
-		assertTrue(camion.agregarPaquete(paquete2));
-		assertTrue(camion.agregarPaquete(paquete3));
-		assertFalse(camion.agregarPaquete(paquete4));
+		assertTrue(this.camion.agregarPaquete(paquete1));
+		assertTrue(this.camion.agregarPaquete(paquete2));
+		assertTrue(this.camion.agregarPaquete(paquete3));
+		assertFalse(this.camion.agregarPaquete(paquete4));
 		
 	}
 }
