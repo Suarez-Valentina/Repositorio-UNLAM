@@ -5,8 +5,46 @@
 .title, .subtitle, .promedio, .resenias, .data{
     color: #004074;
 }
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f3f4f6;
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    border-bottom: 2px solid #e6e6e6;
+    position: relative;
+}
+
+.header-left,
+.header-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header-left {
+    left: 16px;
+}
+
+.header-left img {
+    width: 3em;
+}
+
+.header-right {
+    right: 16px;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+}
+
 .main{
-    margin: 3em 10em;
 }
 .desempenio{
     margin: 0em 1em;
@@ -154,14 +192,15 @@
     flex-direction: row;
     align-items: center;
     gap: 1.2em;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 500;
     color: #646D79;
 }
 .cantSolicitudes{
     font-weight: bold;
-    font-size: 20px;
+    font-size: 15px;
 }
+
 .tick{
     width: 37px;
     height: 37px;
@@ -229,6 +268,8 @@
     flex-direction: row;
     align-items: center;
     gap: 1em;
+
+    margin-bottom: 5px;/*Cambio*/
 }
 .resenia-valoracion{
     display: flex;
@@ -352,3 +393,113 @@
 .c6 { background: #EC75B3; }
 .c7 { background: #C998F7; }
 .c8 { background: #F3D353; }
+
+@media screen and (min-width: 768px) {
+    body {
+        padding: 0 10%;
+    }
+}
+
+@media screen and (max-width: 425px){
+    .cantHoras_contenedor-grafico{
+        padding: 0;
+    }
+    
+    /*CAmbios*/
+    .cantHoras{
+        gap: 0.5em;
+        padding: 0.5em;
+    }
+    .cantHoras-button{
+        padding: 0.7em;
+    }
+    /*fin*/
+
+    .solicitud{
+        gap: 2px;
+
+        padding: 5px 15px;/*Cambio*/
+        height: auto;
+        justify-content: flex-start;
+        flex-direction: column;
+        width: 120px;
+    }
+    .solicitudes-contenedor-primero{
+        flex-direction: row;
+
+        justify-content: center; /*Cambio*/
+    }
+    .solicitudes{
+        flex-direction: column;
+        gap: 0;
+    }
+    .solicitud-principio{
+        gap: 5px;
+
+        flex-direction: column; /*cambio*/
+    }
+    .cancel, .tick{
+        width: 25px;
+        height: 25px;
+    }
+    .solicitudesAceptadas-contenedor{
+        width: 100%; /*CAmbio*/
+    }
+    .leyenda{
+        display: none;
+    }
+    .segundo{
+        gap: 0;
+        align-items: center;
+        flex-direction: column;
+
+        margin: 1em 15%; /*Cambio*/
+        width: 70%;
+    }
+    /*CAmbios*/
+    .primero{
+        width: 100%;
+    }
+    .resenias-section{
+        flex-direction: column;
+    }
+    .puntuacion-contenedor{
+        flex-direction: row;
+        align-items: center;
+        gap: 1em;
+    }
+    .estrellitas{
+        flex-direction: row;
+        align-items: center;
+    }
+    .invisible{
+        display: none;
+    }
+    .promedio{
+        font-size: 32px;
+    }
+    .stars-item{
+        width: 25px;
+        height: 25px;
+    }
+    .reseniasEscritas-contenedor{
+        width: 100%;
+    }
+    .resenia{
+        padding: 0;
+    }
+    .valoracion-contenedor{
+        grid-template-columns: 0.5fr 1fr auto;
+        gap: 1em;
+    }
+    .caracteristicas{
+        padding-top: 5px;
+        padding-bottom: 0;
+    }
+    .respons{
+        margin-top: 10px;
+    }
+    .calidad{
+        margin-top: 5px;
+    }
+}
